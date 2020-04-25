@@ -701,7 +701,7 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x5C9D78B6)
 I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x5C9D78B6)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x5C9D78B6)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x5C9D78B6)
-F (..\..\User\main.c)(0x5EA43268)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\..\Libraries\CMSIS -I ..\..\User -I ..\..\Libraries\FWlib\inc-I.\RTE\_HC05-IC:\Users\cinte\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\main.o --omf_browse ..\..\output\main.crf --depend ..\..\output\main.d)
+F (..\..\User\main.c)(0x5EA443CF)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\..\Libraries\CMSIS -I ..\..\User -I ..\..\Libraries\FWlib\inc-I.\RTE\_HC05-IC:\Users\cinte\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\main.o --omf_browse ..\..\output\main.crf --depend ..\..\output\main.d)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5C9D78B6)
 I (..\..\Libraries\CMSIS\core_cm3.h)(0x5C9D78B6)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
@@ -734,7 +734,7 @@ I (..\..\User\./usart/bsp_usart.h)(0x5C9D78B6)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
 I (..\..\User\./usart/bsp_usart_blt.h)(0x5EA43662)
 I (..\..\User\./systick/bsp_SysTick.h)(0x5C9D78B6)
-I (..\..\User\./hc05/bsp_hc05.h)(0x5C9D78B6)
+I (..\..\User\./bt05/bsp_bt05.h)(0x5EA441C5)
 I (..\..\User\./led/bsp_led.h)(0x5C9D78B6)
 I (..\..\User\./key/bsp_key.h)(0x5C9D78B6)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
@@ -802,40 +802,6 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x5C9D78B6)
 I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x5C9D78B6)
 I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x5C9D78B6)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x5C9D78B6)
-F (..\..\User\hc05\bsp_hc05.c)(0x5C9D78B6)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\..\Libraries\CMSIS -I ..\..\User -I ..\..\Libraries\FWlib\inc-I.\RTE\_HC05-IC:\Users\cinte\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_hc05.o --omf_browse ..\..\output\bsp_hc05.crf --depend ..\..\output\bsp_hc05.d)
-I (..\..\User\./hc05/bsp_hc05.h)(0x5C9D78B6)
-I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5C9D78B6)
-I (..\..\Libraries\CMSIS\core_cm3.h)(0x5C9D78B6)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
-I (..\..\Libraries\CMSIS\system_stm32f10x.h)(0x5C9D78B6)
-I (..\..\User\stm32f10x_conf.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_adc.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_bkp.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_can.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_cec.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_crc.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_dac.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_dbgmcu.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_dma.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_exti.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_flash.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_fsmc.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_gpio.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_i2c.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_iwdg.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_pwr.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_rcc.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_rtc.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_sdio.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x5C9D78B6)
-I (..\..\Libraries\FWlib\inc\misc.h)(0x5C9D78B6)
-I (..\..\User\./systick/bsp_SysTick.h)(0x5C9D78B6)
-I (..\..\User\./usart/bsp_usart_blt.h)(0x5EA43662)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
 F (..\..\User\led\bsp_led.c)(0x5C9D78B6)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\..\Libraries\CMSIS -I ..\..\User -I ..\..\Libraries\FWlib\inc-I.\RTE\_HC05-IC:\Users\cinte\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_led.o --omf_browse ..\..\output\bsp_led.crf --depend ..\..\output\bsp_led.d)
 I (..\..\User\./led/bsp_led.h)(0x5C9D78B6)
 I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5C9D78B6)
@@ -959,4 +925,38 @@ I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x5C9D78B6)
 I (..\..\Libraries\FWlib\inc\misc.h)(0x5C9D78B6)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
 I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5CEB79E4)
+F (..\..\User\bt05\bsp_bt05.c)(0x5EA43C36)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I ..\..\Libraries\CMSIS -I ..\..\User -I ..\..\Libraries\FWlib\inc-I.\RTE\_HC05-IC:\Users\cinte\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\..\output\bsp_bt05.o --omf_browse ..\..\output\bsp_bt05.crf --depend ..\..\output\bsp_bt05.d)
+I (..\..\User\./bt05/bsp_bt05.h)(0x5EA441C5)
+I (..\..\Libraries\CMSIS\stm32f10x.h)(0x5C9D78B6)
+I (..\..\Libraries\CMSIS\core_cm3.h)(0x5C9D78B6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\Libraries\CMSIS\system_stm32f10x.h)(0x5C9D78B6)
+I (..\..\User\stm32f10x_conf.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_adc.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_bkp.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_can.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_cec.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_crc.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dac.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dbgmcu.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_dma.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_exti.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_flash.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_fsmc.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_gpio.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_i2c.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_iwdg.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_pwr.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_rcc.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_rtc.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_sdio.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_spi.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_tim.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_usart.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\stm32f10x_wwdg.h)(0x5C9D78B6)
+I (..\..\Libraries\FWlib\inc\misc.h)(0x5C9D78B6)
+I (..\..\User\./systick/bsp_SysTick.h)(0x5C9D78B6)
+I (..\..\User\./usart/bsp_usart_blt.h)(0x5EA43662)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
 F (..\..\【必读】程序说明.txt)(0x5C9D78B6)()

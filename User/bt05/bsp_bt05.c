@@ -15,7 +15,7 @@
   ******************************************************************************
   */ 
 
-#include "./hc05/bsp_hc05.h"
+#include "./bt05/bsp_bt05.h"
 #include "./usart/bsp_usart_blt.h"
 #include <string.h>
 #include <stdio.h>

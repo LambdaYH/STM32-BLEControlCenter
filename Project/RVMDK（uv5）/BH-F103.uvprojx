@@ -558,11 +558,6 @@
               <FilePath>..\..\User\SysTick\bsp_SysTick.c</FilePath>
             </File>
             <File>
-              <FileName>bsp_hc05.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\User\hc05\bsp_hc05.c</FilePath>
-            </File>
-            <File>
               <FileName>bsp_led.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\led\bsp_led.c</FilePath>
@@ -581,6 +576,11 @@
               <FileName>bsp_usart_blt.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\User\usart\bsp_usart_blt.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_bt05.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\User\bt05\bsp_bt05.c</FilePath>
             </File>
           </Files>
         </Group>

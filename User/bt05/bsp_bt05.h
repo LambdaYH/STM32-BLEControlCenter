@@ -32,16 +32,16 @@
 #define HC05_DEBUG_ON        0
 #define HC05_DEBUG_FUNC_ON    0
 
-#define HC05_INFO(fmt,arg...)           printf("<<-HC05-INFO->> "fmt"\n",##arg)
-#define HC05_ERROR(fmt,arg...)          printf("<<-HC05-ERROR->> "fmt"\n",##arg)
+#define HC05_INFO(fmt,arg...)           printf("<<-BT05-INFO->> "fmt"\n",##arg)
+#define HC05_ERROR(fmt,arg...)          printf("<<-BT05-ERROR->> "fmt"\n",##arg)
 #define HC05_DEBUG(fmt,arg...)          do{\
                                           if(HC05_DEBUG_ON)\
-                                          printf("<<-HC05-DEBUG->> [%d]"fmt"\n",__LINE__, ##arg);\
+                                          printf("<<-BT05-DEBUG->> [%d]"fmt"\n",__LINE__, ##arg);\
                                           }while(0)
 
 #define HC05_DEBUG_FUNC()               do{\
                                          if(HC05_DEBUG_FUNC_ON)\
-                                         printf("<<-HC05-FUNC->> Func:%s@Line:%d\n",__func__,__LINE__);\
+                                         printf("<<-BT05-FUNC->> Func:%s@Line:%d\n",__func__,__LINE__);\
                                        }while(0)
 
 	

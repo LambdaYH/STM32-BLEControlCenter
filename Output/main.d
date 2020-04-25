@@ -32,7 +32,7 @@
 ..\..\output\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\..\output\main.o: ..\..\User\./usart/bsp_usart_blt.h
 ..\..\output\main.o: ..\..\User\./systick/bsp_SysTick.h
-..\..\output\main.o: ..\..\User\./hc05/bsp_hc05.h
+..\..\output\main.o: ..\..\User\./bt05/bsp_bt05.h
 ..\..\output\main.o: ..\..\User\./led/bsp_led.h
 ..\..\output\main.o: ..\..\User\./key/bsp_key.h
 ..\..\output\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
