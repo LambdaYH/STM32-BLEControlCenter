@@ -47,12 +47,13 @@ UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 
 osThreadId defaultTaskHandle;
-osThreadId controllightsHandle;
 /* USER CODE BEGIN PV */
 #define MAX_RECV_LEN 128
 
 char  recv[100];
 int recvtype=0;
+
+int ONOFF_FLG=0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -61,7 +62,6 @@ static void MX_GPIO_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_USART2_UART_Init(void);
 void StartDefaultTask(void const * argument);
-void StartControlLights(void const * argument);
 
 /* USER CODE BEGIN PFP */
 uint8_t rx1_buff[MAX_RECV_LEN] = {0};  // 串口接收数据缓冲
@@ -79,7 +79,29 @@ HAL_StatusTypeDef rxit_ok2; // 接收中断是否开启
 //Transmit data to uart
 int fputc(int ch, FILE *f) {
     HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 0xffff); // 向串口1发送一个字符
+		HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xffff); // 向串口1发送一个字符
     return 0;
+}
+//setlights
+void setLights(){
+	if(ONOFF_FLG==0){
+		HAL_GPIO_WritePin(ONOFF_1_GPIO_Port,ONOFF_1_Pin,GPIO_PIN_SET);
+	}
+	if(ONOFF_FLG==1){
+		HAL_GPIO_WritePin(ONOFF_1_GPIO_Port,ONOFF_1_Pin,GPIO_PIN_RESET);
+	}
+}
+//processData
+void processData(uint8_t* rx_buff){
+	if(strcmp(rx_buff,"ON\n")==0){
+		ONOFF_FLG=1;
+		printf("l is on\n");
+	}
+	if(strcmp(rx_buff,"OFF\n")==0){
+		ONOFF_FLG=0;
+		printf("l is off\n");
+	}
+	setLights();
 }
 //uart interupt callback funtion
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) {
@@ -147,7 +169,7 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-	printf("hello PC\n");         
+	printf("Wireless Control Ceiling Lights\n");         
 	rxit_ok = HAL_UART_Receive_IT(&huart1, pBuf, 1); 
 	rxit_ok2 = HAL_UART_Receive_IT(&huart2, pBuf2, 1);  
   /* USER CODE END 2 */
@@ -172,10 +194,6 @@ int main(void)
   /* definition and creation of defaultTask */
   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
-
-  /* definition and creation of controllights */
-  osThreadDef(controllights, StartControlLights, osPriorityIdle, 0, 128);
-  controllightsHandle = osThreadCreate(osThread(controllights), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -314,20 +332,20 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6|GPIO_PIN_7, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, ONOFF_1_Pin|ONOFF_2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, BLUE_Pin|GREEN_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : PA6 PA7 */
-  GPIO_InitStruct.Pin = GPIO_PIN_6|GPIO_PIN_7;
+  /*Configure GPIO pins : ONOFF_1_Pin ONOFF_2_Pin */
+  GPIO_InitStruct.Pin = ONOFF_1_Pin|ONOFF_2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PB0 PB1 */
-  GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1;
+  /*Configure GPIO pins : BLUE_Pin GREEN_Pin */
+  GPIO_InitStruct.Pin = BLUE_Pin|GREEN_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -361,7 +379,7 @@ void StartDefaultTask(void const * argument)
 			line_flag = 0;  // 串口1接收标志清零
 		}
 		if (line_flag2) {		// 如果串口2接收到一行数据
-			printf("rx2_buff = %s", rx2_buff);       // 打印接收内容到串口1
+			processData(rx2_buff);
 			memset(rx2_buff, 0, sizeof(rx2_buff));   // 清空串口2缓存区
 			pBuf2 = rx2_buff;// 重新将串口2接收数据的存放指针指向接收缓存的头部
 			(&huart2)->pRxBuffPtr = pBuf2;    // 重新将串口2结构体中的接收缓冲指针指向缓冲数组头部
@@ -374,24 +392,6 @@ void StartDefaultTask(void const * argument)
     osDelay(1);
   }
   /* USER CODE END 5 */ 
-}
-
-/* USER CODE BEGIN Header_StartControlLights */
-/**
-* @brief Function implementing the controllights thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_StartControlLights */
-void StartControlLights(void const * argument)
-{
-  /* USER CODE BEGIN StartControlLights */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END StartControlLights */
 }
 
 /**
