@@ -1,0 +1,26 @@
+--cpu Cortex-M3
+"stm32_cc\startup_stm32l151xba.o"
+"stm32_cc\main.o"
+"stm32_cc\stm32l1xx_it.o"
+"stm32_cc\stm32l1xx_hal_msp.o"
+"stm32_cc\system_stm32l1xx.o"
+"stm32_cc\colorset.o"
+"stm32_cc\ws2812b.o"
+"stm32_cc\stm32l1xx_hal_tim.o"
+"stm32_cc\stm32l1xx_hal_tim_ex.o"
+"stm32_cc\stm32l1xx_hal.o"
+"stm32_cc\stm32l1xx_hal_rcc.o"
+"stm32_cc\stm32l1xx_hal_rcc_ex.o"
+"stm32_cc\stm32l1xx_hal_flash.o"
+"stm32_cc\stm32l1xx_hal_flash_ex.o"
+"stm32_cc\stm32l1xx_hal_flash_ramfunc.o"
+"stm32_cc\stm32l1xx_hal_gpio.o"
+"stm32_cc\stm32l1xx_hal_dma.o"
+"stm32_cc\stm32l1xx_hal_pwr.o"
+"stm32_cc\stm32l1xx_hal_pwr_ex.o"
+"stm32_cc\stm32l1xx_hal_cortex.o"
+"stm32_cc\stm32l1xx_hal_uart.o"
+--library_type=microlib --strict --scatter "STM32_CC\STM32_CC.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "STM32_CC.map" -o STM32_CC\STM32_CC.axf
