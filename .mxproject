@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=C:/Users/cinte/Documents/STM32WORK/STM32_CC/Inc
+HeaderPath=C:/Users/cinte/Desktop/STM32-BLEControlCenter/Inc
 HeaderFiles=stm32l1xx_it.h;stm32l1xx_hal_conf.h;main.h;
-SourcePath=C:/Users/cinte/Documents/STM32WORK/STM32_CC/Src
+SourcePath=C:/Users/cinte/Desktop/STM32-BLEControlCenter/Src
 SourceFiles=stm32l1xx_it.c;stm32l1xx_hal_msp.c;main.c;
 
 [PreviousLibFiles]
