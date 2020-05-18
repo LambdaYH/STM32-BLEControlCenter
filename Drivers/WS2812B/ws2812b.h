@@ -4,7 +4,7 @@
 #include "stdint.h"
 #include "stm32l1xx_hal.h"
 //#include "tim.h"
-#define PIXEL_MAX  35
+#define PIXEL_MAX  30
 //#define FLASH_REFRESH_RATE      (50)                        //led刷新频率
 //#define FLASH_REFRESH_PERIOD    (1000/FLASH_REFRESH_RATE)   //刷新周期
 extern uint8_t rBuffer[PIXEL_MAX];

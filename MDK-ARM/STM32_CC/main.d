@@ -31,5 +31,6 @@ stm32_cc\main.o: ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h
 stm32_cc\main.o: ../Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h
 stm32_cc\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 stm32_cc\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+stm32_cc\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 stm32_cc\main.o: ..\Drivers\WS2812B\colorset.h
 stm32_cc\main.o: ..\Drivers\WS2812B\ws2812b.h

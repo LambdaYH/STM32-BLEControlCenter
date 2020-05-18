@@ -25,6 +25,7 @@
 /* USER CODE BEGIN Includes */
 #include "string.h"
 #include "stdio.h"
+#include "stdlib.h"
 
 #include "colorset.h"
 #include "ws2812b.h"
@@ -60,9 +61,11 @@ int recvtype=0;
 
 int ONOFF_FLG=0;
 
-uint8_t g=255;
-uint8_t r=255;
-uint8_t b=255;
+char g[] ="255";
+char b[] ="255";
+char r[] ="255";
+
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -91,28 +94,53 @@ int fputc(int ch, FILE *f) {
 		HAL_UART_Transmit(&huart2, (uint8_t *)&ch, 1, 0xffff); // 向串口1发送一个字符
     return 0;
 }
-//setlights
-void setLights(){
-	if(ONOFF_FLG==0){
-				setAllPixelColor(g,r,b);
-    WS2812B_Show();
-	}
-	if(ONOFF_FLG==1){
-				setAllPixelColor(0,0,0);
-    WS2812B_Show();
+//spilit
+void split( char **arr, char *str, const char *del)//字符分割函数的简单定义和实知现
+{
+	char *s =NULL;
+	s=strtok(str,del);
+	while(s != NULL)
+	{
+	*arr++ = s;
+	s = strtok(NULL,del);
 	}
 }
+//setlights
+void setLights(){
+	if(ONOFF_FLG==1){
+		char *rx_t=rx2_buff;
+		char *token;
+		token=strtok(rx_t,"|");
+		strcpy(g,token);
+
+		token=strtok(NULL,"|");
+		strcpy(b,token);
+
+		token=strtok(NULL,"|");
+		strcpy(r,token);
+		
+		uint8_t g_t=atoi(g);
+		uint8_t b_t=atoi(b);
+		uint8_t r_t=atoi(r);
+		setAllPixelColor(g_t,b_t,r_t);
+    WS2812B_Show();
+	
+}
+	}
 //processData
 void processData(uint8_t* rx_buff){
 	if(strcmp(rx_buff,"ON\n")==0){
 		ONOFF_FLG=1;
-		printf("l is on\n");
-	}
+	}else
 	if(strcmp(rx_buff,"OFF\n")==0){
 		ONOFF_FLG=0;
-		printf("l is off\n");
+		setAllPixelColor(0,0,0);
+    WS2812B_Show();
+	}else
+	{
+		setLights();
 	}
-	setLights();
+
 }
 //process BlueTooth data
 void ifRecData(){
